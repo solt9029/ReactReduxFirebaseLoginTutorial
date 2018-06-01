@@ -9,7 +9,12 @@ export const startLogin = () => ({
 export const endLogin = user => ({
   type: 'END_LOGIN',
   payload: {
-    user: user
+    displayName: user.displayName,
+    email: user.email,
+    phoneNumber: user.phoneNumber,
+    photoURL: user.photoURL,
+    providerId: user.providerId,
+    uid: user.uid
   }
 });
 
@@ -17,9 +22,8 @@ export const login = () => {
   return (dispatch) => {
     dispatch(startLogin());
     auth.signInWithPopup(provider).then((result) => {
-      const user = result.user;
-      dispatch(endLogin(user));
+      dispatch(endLogin(result.user));
       history.push('/home');
     });
   }
-}
+};

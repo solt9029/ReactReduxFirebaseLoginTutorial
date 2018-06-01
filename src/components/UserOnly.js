@@ -6,9 +6,7 @@ export default class UserOnly extends React.Component {
     return (
       <div>
         <h2>UserOnly</h2>
-        {
-          this.props.user ? this.props.user.displayName : 'Please login'
-        }
+        { this.props.displayName }
       </div>
     )
   }
