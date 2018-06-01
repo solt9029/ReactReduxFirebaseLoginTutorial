@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import UserComponent from './containers/UserComponent';
-import TopComponent from './containers/TopComponent';
+import UserContainer from './containers/UserContainer';
+import TopContainer from './containers/TopContainer';
 
 export default class App extends Component {
   render() {
@@ -12,8 +12,8 @@ export default class App extends Component {
           <li><Link to="/home">ユーザ専用ページ</Link></li>
         </ul>
         <Switch>
-          <Route exact path="/" component={TopComponent} />
-          <Route exact path="/home" component={UserComponent} />
+          <Route exact path="/" component={TopContainer} />
+          <Route exact path="/home" component={UserContainer} />
           {/* <Route exact path="/home" render={() => <Redirect to="/" />} /> */}
         </Switch>
       </div>
