@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import UserOnly from '../components/UserOnly';
-import * as actions from '../actions/User';
+import * as actions from '../actions/user';
 
 const mapStateToProps = (state) => ({
-  displayName: state.User.displayName,
-  email: state.User.email,
-  phoneNumber: state.User.phoneNumber,
-  photoURL: state.User.photoURL,
-  providerId: state.User.providerId,
-  uid: state.User.uid
+  displayName: state.user.displayName,
+  email: state.user.email,
+  phoneNumber: state.user.phoneNumber,
+  photoURL: state.user.photoURL,
+  providerId: state.user.providerId,
+  uid: state.user.uid
 });
 
 const mapDispatchToProps = dispatch => ({

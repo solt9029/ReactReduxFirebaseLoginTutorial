@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Top from '../components/Top';
-import * as actions from '../actions/User';
+import * as actions from '../actions/user';
 
 const mapStateToProps = (state) => ({});
 
