@@ -1,5 +1,5 @@
 import { auth, provider } from '../firebase';
-import { history} from '../history';
+import { history } from '../history';
 
 export const startLogin = () => ({
   type: 'START_LOGIN',
