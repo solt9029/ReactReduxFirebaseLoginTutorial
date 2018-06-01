@@ -1,4 +1,4 @@
-# Best Before Management
+# ReactReduxFirebaseLoginTutorial
 
 ## Version
 
@@ -7,11 +7,21 @@
 
 ## Setup
 
+- library install
+
 ```
-cd BestBeforeManagement
 npm install
+```
+
+- apply your firebase config code!
+
+```
 cd src/firebase
-cp config.js.example config.js # Write your config code in this file
-cd ../../
+cp config.js.example config.js
+```
+
+- check this app on http://localhost:3000
+
+```
 npm start
 ```
