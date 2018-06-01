@@ -1,4 +1,5 @@
 import { auth, provider } from '../firebase';
+import { history} from '../history';
 
 export const startLogin = () => ({
   type: 'START_LOGIN',
@@ -18,6 +19,7 @@ export const login = () => {
     auth.signInWithPopup(provider).then((result) => {
       const user = result.user;
       dispatch(endLogin(user));
+      history.push('/home');
     });
   }
 }
