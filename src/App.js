@@ -15,7 +15,6 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={Top} />
           <PrivateRoute exact path="/home" component={UserOnly} />
-          {/* <Route exact path="/home" render={() => <Redirect to="/" />} /> */}
         </Switch>
       </div>
     );
