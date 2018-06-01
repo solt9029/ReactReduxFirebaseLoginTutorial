@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
-import TopComponent from '../components/TopComponent';
+import UserOnly from '../components/UserOnly';
 import * as actions from '../actions/User';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  user: state.User.user
+});
 
 const mapDispatchToProps = dispatch => ({
   login() {
@@ -10,4 +12,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(UserOnly);
