@@ -3,9 +3,9 @@ import { Redirect } from 'react-router-dom';
 
 export default class UserComponent extends React.Component {
   render() {
-    if (!this.props.user) {
-      return <Redirect to="/" />;
-    }
+    // if (!this.props.user) {
+    //   return <Redirect to="/" />;
+    // }
     return (
       <div>
         <h2>UserComponent</h2>
