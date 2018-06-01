@@ -12,7 +12,8 @@ export default class App extends Component {
         </ul>
         <Switch>
           <Route exact path="/" component={UserComponent} />
-          <Route exact path="/home" render={() => <Redirect to="/" />} />
+          <Route exact path="/home" component={UserComponent} />
+          {/* <Route exact path="/home" render={() => <Redirect to="/" />} /> */}
         </Switch>
       </div>
     );
