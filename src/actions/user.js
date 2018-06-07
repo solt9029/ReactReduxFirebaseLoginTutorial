@@ -1,11 +1,6 @@
 import { auth, provider } from '../firebase';
 import { history } from '../history';
 
-export const startLogin = () => ({
-  type: 'START_LOGIN',
-  payload: {}
-});
-
 export const endLogin = user => ({
   type: 'END_LOGIN',
   payload: {
@@ -20,21 +15,23 @@ export const endLogin = user => ({
 
 export const login = () => {
   return (dispatch) => {
-    dispatch(startLogin());
     auth.signInWithPopup(provider).then((result) => {
       dispatch(endLogin(result.user));
       history.push('/home');
     });
-  }
+  };
 };
+
+export const endLogout = () => ({
+  type: 'END_LOGOUT',
+  payload: {}
+});
 
 export const logout = () => {
   return (dispatch) => {
     auth.signOut().then((result) => {
-      dispatch(() =>({
-        type: 'LOGOUT',
-        payload: {}
-      }));
+      dispatch(endLogout());
+      history.push('/');
     });
-  }
+  };
 };

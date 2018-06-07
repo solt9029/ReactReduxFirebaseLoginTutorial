@@ -8,10 +8,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case 'START_LOGIN':
-      return initialState;
-    
+  switch (action.type) {    
     case 'END_LOGIN':
       return {
         ...state,
@@ -22,6 +19,9 @@ export default (state = initialState, action) => {
         providerId: action.payload.providerId,
         uid: action.payload.uid
       }
+    
+    case 'END_LOGOUT':
+      return initialState;
 
     default:
       return state;
