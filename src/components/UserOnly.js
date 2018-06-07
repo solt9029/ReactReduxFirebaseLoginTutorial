@@ -6,7 +6,7 @@ export default class UserOnly extends React.Component {
     return (
       <div>
         <h2>UserOnly</h2>
-        { this.props.displayName }
+        { this.props.user.displayName }
         <button onClick={() => this.props.logout()}>logout</button>
       </div>
     )

@@ -3,7 +3,7 @@ import Auth from '../components/Auth';
 import * as actions from '../actions/user';
 
 const mapStateToProps = (state) => ({
-  uid: state.user.uid
+  user: state.user
 });
 
 const mapDispatchToProps = dispatch => ({
