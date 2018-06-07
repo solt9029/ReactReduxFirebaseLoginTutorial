@@ -35,3 +35,14 @@ export const logout = () => {
     });
   };
 };
+
+export const onAuthStateChanged = () => {
+  return (dispatch) => {
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        return;
+      }
+      dispatch(endLogin(user));
+    });
+  };
+};
