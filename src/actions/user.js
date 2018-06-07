@@ -1,5 +1,4 @@
 import { auth, provider } from '../firebase';
-import { history } from '../history';
 
 export const endLogin = user => ({
   type: 'END_LOGIN',
@@ -17,7 +16,6 @@ export const login = () => {
   return (dispatch) => {
     auth.signInWithPopup(provider).then((result) => {
       dispatch(endLogin(result.user));
-      history.push('/home');
     });
   };
 };
@@ -31,7 +29,6 @@ export const logout = () => {
   return (dispatch) => {
     auth.signOut().then((result) => {
       dispatch(endLogout());
-      history.push('/');
     });
   };
 };
@@ -43,7 +40,6 @@ export const onAuthStateChanged = () => {
         return;
       }
       dispatch(endLogin(user));
-      history.push('/home');
     });
   };
 };

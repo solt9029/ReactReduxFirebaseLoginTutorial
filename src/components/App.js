@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Link } from 'react-router-dom';
 import UserOnly from '../containers/UserOnly';
 import GuestOnly from '../containers/GuestOnly';
 import UserOnlyRoute from '../containers/UserOnlyRoute';

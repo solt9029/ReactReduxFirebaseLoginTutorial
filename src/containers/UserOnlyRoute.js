@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import UserOnlyRoute from '../components/UserOnlyRoute';
-import * as actions from '../actions/user';
 
 const mapStateToProps = (state) => ({
   user: state.user
