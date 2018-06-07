@@ -43,6 +43,7 @@ export const onAuthStateChanged = () => {
         return;
       }
       dispatch(endLogin(user));
+      history.push('/home');
     });
   };
 };

@@ -7,6 +7,9 @@ const mapStateToProps = (state) => ({});
 const mapDispatchToProps = dispatch => ({
   login() {
     dispatch(actions.login());
+  },
+  onAuthStateChanged() {
+    dispatch(actions.onAuthStateChanged());
   }
 });
 
