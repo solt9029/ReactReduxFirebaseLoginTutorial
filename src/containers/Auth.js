@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PrivateRoute from '../components/PrivateRoute';
+import Auth from '../components/Auth';
 import * as actions from '../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -9,4 +9,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PrivateRoute);
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

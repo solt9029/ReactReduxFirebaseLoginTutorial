@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
 import UserOnly from './containers/UserOnly';
 import Top from './containers/Top';
-import PrivateRoute from './containers/PrivateRoute';
+import Auth from './containers/Auth';
 
 export default class App extends Component {
   render() {
@@ -14,7 +14,9 @@ export default class App extends Component {
         </ul>
         <Switch>
           <Route exact path="/" component={Top} />
-          <PrivateRoute exact path="/home" component={UserOnly} />
+          <Auth>
+            <Route exact path="/home" component={UserOnly} />
+          </Auth>
         </Switch>
       </div>
     );
