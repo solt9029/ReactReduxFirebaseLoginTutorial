@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Auth from '../components/Auth';
+import GuestOnlyRoute from '../components/GuestOnlyRoute';
 import * as actions from '../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -9,4 +9,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(GuestOnlyRoute);

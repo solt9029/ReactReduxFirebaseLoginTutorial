@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import UserOnly from '../containers/UserOnly';
 import Top from '../containers/Top';
-import Auth from '../containers/Auth';
+import UserOnlyRoute from '../containers/UserOnlyRoute';
+import GuestOnlyRoute from '../containers/GuestOnlyRoute';
 
 export default class App extends Component {
   componentDidMount() {
@@ -16,12 +17,8 @@ export default class App extends Component {
           <li><Link to="/home">ユーザ専用ページ</Link></li>
         </ul>
         <Switch>
-          <Route exact path="/" component={Top} />
-          <Auth>
-            <Switch>
-              <Route exact path="/home" component={UserOnly} />
-            </Switch>
-          </Auth>
+          <GuestOnlyRoute exact path="/" component={Top} />
+          <UserOnlyRoute exact path="/home" component={UserOnly} />
         </Switch>
       </div>
     );
