@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class UserOnly extends React.Component {
   componentDidMount() {
-    this.props.onValue(this.props.user.uid);
+    this.props.onValue();
   }
   render() {
     return (

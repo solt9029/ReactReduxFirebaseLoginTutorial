@@ -12,8 +12,8 @@ const mapDispatchToProps = dispatch => ({
   logout() {
     dispatch(logout());
   },
-  onValue(uid) {
-    dispatch(onValue(uid));
+  onValue() {
+    dispatch(onValue());
   }
 });
 

@@ -7,8 +7,9 @@ export const addList = list => ({
   }
 });
 
-export const onValue = (uid) => {
-  return (dispatch) => {
+export const onValue = () => {
+  return (dispatch, getState) => {
+    const uid = getState().user.uid;
     firebase.database().ref(uid).on('value', (snapshot) => {
       let value = snapshot.val();
       let list = [];
