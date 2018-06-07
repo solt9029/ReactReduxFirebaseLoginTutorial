@@ -1,14 +1,19 @@
 import { connect } from 'react-redux';
 import UserOnly from '../components/UserOnly';
-import * as actions from '../actions/user';
+import * as userActions from '../actions/user';
+import * as itemActions from '../actions/item';
 
 const mapStateToProps = (state) => ({
-  user: state.user
+  user: state.user,
+  item: state.item
 });
 
 const mapDispatchToProps = dispatch => ({
   logout() {
-    dispatch(actions.logout());
+    dispatch(userActions.logout());
+  },
+  onValue(uid) {
+    dispatch(itemActions.onValue(uid));
   }
 });
 
