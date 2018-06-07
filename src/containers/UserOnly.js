@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import UserOnly from '../components/UserOnly';
-import * as userActions from '../actions/user';
-import * as itemActions from '../actions/item';
+import { logout } from '../actions/user';
+import { onValue } from '../actions/item';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -10,10 +10,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   logout() {
-    dispatch(userActions.logout());
+    dispatch(logout());
   },
   onValue(uid) {
-    dispatch(itemActions.onValue(uid));
+    dispatch(onValue(uid));
   }
 });
 
