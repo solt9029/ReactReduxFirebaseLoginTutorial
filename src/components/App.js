@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import UserOnly from './containers/UserOnly';
-import Top from './containers/Top';
-import Auth from './containers/Auth';
+import { Switch, Route, Link } from 'react-router-dom';
+import UserOnly from '../containers/UserOnly';
+import Top from '../containers/Top';
+import Auth from '../containers/Auth';
 
 export default class App extends Component {
+  componentDidMount() {
+    this.props.onAuthStateChanged();
+  }
   render() {
     return (
       <div className="App">

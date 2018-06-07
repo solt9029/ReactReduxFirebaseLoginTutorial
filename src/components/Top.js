@@ -1,9 +1,6 @@
 import React from 'react';
 
 export default class Top extends React.Component {
-  componentDidMount() {
-    this.props.onAuthStateChanged();
-  }
   render() {
     return (
       <div>
