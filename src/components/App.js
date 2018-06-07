@@ -18,7 +18,9 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={Top} />
           <Auth>
-            <Route exact path="/home" component={UserOnly} />
+            <Switch>
+              <Route exact path="/home" component={UserOnly} />
+            </Switch>
           </Auth>
         </Switch>
       </div>
