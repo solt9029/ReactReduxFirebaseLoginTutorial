@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Link } from 'react-router-dom';
 import UserOnly from '../containers/UserOnly';
 import GuestOnly from '../containers/GuestOnly';
-import UserOnlyRoute from '../containers/UserOnlyRoute';
-import GuestOnlyRoute from '../containers/GuestOnlyRoute';
+import SwitchRoute from '../containers/SwitchRoute';
 
 export default class App extends Component {
   componentDidMount() {
@@ -12,13 +11,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <ul>
-          <li><Link to="/">ゲスト専用ページ</Link></li>
-          <li><Link to="/home">ユーザ専用ページ</Link></li>
-        </ul>
         <Switch>
-          <GuestOnlyRoute exact path="/" component={GuestOnly} />
-          <UserOnlyRoute exact path="/home" component={UserOnly} />
+          <SwitchRoute exact path="/" userComponent={UserOnly} guestComponent={GuestOnly} />
         </Switch>
       </div>
     );
