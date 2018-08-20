@@ -1,14 +1,28 @@
 import firebase, { auth, provider } from '../firebase';
 
+export const onValue = () => {
+  return (dispatch, getState) => {
+    const uid = getState().user.uid;
+    firebase.database().ref(uid).on('value', (snapshot) => {
+      let value = snapshot.val();
+      let list = [];
+      for (let id in value) {
+        list.push({
+          id: id,
+          title: value[id].title,
+          content: value[id].content
+        });
+      }
+      dispatch(addList(list));
+    });
+  };
+};
+
 export const addList = list => ({
   type: 'ADD_LIST',
   payload: {
     list: list
   }
-});
-
-export const submit = () => ({
-  type: 'SUBMIT'
 });
 
 export const handleSubmit = (event) => {
@@ -25,7 +39,11 @@ export const handleSubmit = (event) => {
     userRef.push(item);
     dispatch(submit());
   };
-}
+};
+
+export const submit = () => ({
+  type: 'SUBMIT'
+});
 
 export const handleChangeTitle = value => ({
   type: 'CHANGE_TITLE',
@@ -40,21 +58,3 @@ export const handleChangeContent = value => ({
     content: value
   }
 });
-
-export const onValue = () => {
-  return (dispatch, getState) => {
-    const uid = getState().user.uid;
-    firebase.database().ref(uid).on('value', (snapshot) => {
-      let value = snapshot.val();
-      let list = [];
-      for (let id in value) {
-        list.push({
-          id: id,
-          title: value[id].title,
-          content: value[id].content
-        });
-      }
-      dispatch(addList(list));
-    })
-  }
-}

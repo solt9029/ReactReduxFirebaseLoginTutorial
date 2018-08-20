@@ -17,7 +17,7 @@ export default class UserOnly extends React.Component {
         </form>
         <ul>
           {this.props.item.list.map((item) => {
-            return <li>{item.title}:{item.content}</li>;
+            return <li key={item.id}>{item.title}:{item.content}</li>;
           })}
         </ul>
       </div>
