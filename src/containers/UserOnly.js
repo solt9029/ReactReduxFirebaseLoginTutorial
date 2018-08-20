@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import UserOnly from '../components/UserOnly';
 import { logout } from '../actions/user';
-import { onValue } from '../actions/item';
+import { onValue, handleChangeContent, handleChangeTitle, handleSubmit } from '../actions/item';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -14,6 +14,15 @@ const mapDispatchToProps = dispatch => ({
   },
   onValue() {
     dispatch(onValue());
+  },
+  handleChangeContent(value) {
+    dispatch(handleChangeContent(value));
+  },
+  handleChangeTitle(value) {
+    dispatch(handleChangeTitle(value));
+  },
+  handleSubmit(event) {
+    dispatch(handleSubmit(event));
   }
 });
 

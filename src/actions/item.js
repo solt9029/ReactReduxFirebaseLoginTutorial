@@ -7,6 +7,40 @@ export const addList = list => ({
   }
 });
 
+export const submit = () => ({
+  type: 'SUBMIT'
+});
+
+export const handleSubmit = (event) => {
+  return (dispatch, getState) => {
+    event.preventDefault();
+    const uid = getState().user.uid;
+    const userRef = firebase.database().ref(uid);
+    const title = getState().item.title;
+    const content = getState().item.content;
+    const item = {
+      title: title,
+      content: content
+    };
+    userRef.push(item);
+    dispatch(submit());
+  };
+}
+
+export const handleChangeTitle = value => ({
+  type: 'CHANGE_TITLE',
+  payload: {
+    title: value
+  }
+});
+
+export const handleChangeContent = value => ({
+  type: 'CHANGE_CONTENT',
+  payload: {
+    content: value
+  }
+});
+
 export const onValue = () => {
   return (dispatch, getState) => {
     const uid = getState().user.uid;
